@@ -1,0 +1,58 @@
+/*
+ * Template Base
+ * @description : main source of files.css  
+ *
+ **/
+
+ body {
+    
+ }
+
+.box-1 {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 9px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.navigation_menu {
+    background: #F9F9F9;
+    border-bottom:1px solid  #d4d4d4;
+    /*margin-bottom: 20px;*/
+}
+.navigation_menu .navbar {
+    margin-bottom: 0px;
+    border:none;
+}
+#myCarousel {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.carousel-caption h3{
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 0 2px 3px rgba(0,0,0,.8);
+}
+.carousel-caption p{
+    font-size: 18px;
+}
+.item{
+    min-height: 300px;
+}
+
+/* ---------------------- efeect border--------------------- */
+.mvngTrtl {
+    height: 100%;
+    width: 136px;
+    position: fixed;
+    top: 0;
+    background-image: url(assets/img/pet-in-page.png);
+}
+.mvngTrtl-1 {
+    left: 0;
+}
+.mvngTrtl-2 {
+    right: 0;
+}
+/* ---------------------- efeect border--------------------- */
+.list {
+    padding: 0;
+}
