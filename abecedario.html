@@ -14,8 +14,8 @@
 
 <body>
     <div class="wrapper">
-        <div class="mvngTrtl mvngTrtl-1 hidden-xs hidden-sm hidden-md"></div>
-        <div class="mvngTrtl mvngTrtl-2 hidden-xs hidden-sm hidden-md"></div>
+        <div class="mvngTrtl mvngTrtl-1 visible-md"></div>
+        <div class="mvngTrtl mvngTrtl-2 visible-md"></div>
 
         <div class="header">
             <div class="navigation_menu " data-spy="affix_" data-offset-top="95" id="enigma_nav_top">
@@ -66,6 +66,9 @@
                         <img ng-src="{{abc.image[0]}}">
                         <div>
                             <h2>{{abc.name}}</h2>
+                            <span class="btn" ng-click="document.getElementById('{{abc.id}}').play()" >
+                                <i class="fa fa-volume-down"></i>
+                            </span>
                         </div>
                     </li>
                 </ul>
@@ -74,8 +77,7 @@
     </div>
 
 </div><!-- end wrapper -->
-
-
+ 
 <script type='text/javascript' src='assets/plugins/jquery.min.js'></script>
 <script type='text/javascript' src='assets/plugins/bootstrap/js/bootstrap.min.js'></script>
 <script type='text/javascript' src='assets/plugins/angular/angular.min.js'></script>
@@ -83,40 +85,24 @@
 <script type="text/javascript">
 (function() {
     var app = angular.module('gemStore', []);
-    app.controller('StoreController', function() {
-        this.alphabet = abc;
-    });
 
+    app.controller('StoreController', ['$scope', function($scope){
+        this.alphabet = arrayAbc;
+    }]);
+
+
+    // variable
+    var abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    var arrayAbc = [];
     var imageDefault = 'assets/img/thumbnail.jpg';
-    var abc = [{
-        name: 'Letra A',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/a'
-    }, {
-        name: 'Letra B',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/b'
-    }, {
-        name: 'Letra C',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/c'
-    }, {
-        name: 'Letra D',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/d'
-    }, {
-        name: 'Letra E',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/e'
-    }, {
-        name: 'Letra E',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/e'
-    }, {
-        name: 'Letra E',
-        image: [imageDefault, 'small.jpg', 'large.jpg'],
-        sound: 'http:/translate.google.com/e'
-    }];
+    abc.forEach(function(element, index, array) {
+        arrayAbc[index] = {
+            id: 'letter-' + element.toLowerCase(),
+            name: 'Letra ' + element.toUpperCase(),
+            image: [imageDefault, 'small.jpg', 'large.jpg'],
+            sound: 'assets/sound/abecedario/' + element.toLowerCase() + '.mp3'
+        };
+    });
 
 })();
 </script>

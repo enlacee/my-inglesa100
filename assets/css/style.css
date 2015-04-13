@@ -45,6 +45,7 @@
     position: fixed;
     top: 0;
     background-image: url(assets/img/pet-in-page.png);
+    display: none;
 }
 .mvngTrtl-1 {
     left: 0;
